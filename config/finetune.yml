@@ -1,0 +1,106 @@
+root: /home/zl/DGM/dataset/finetune/processed
+name: megnet_processed.pt
+
+target: e_form
+# Materials Project dataset entries: e_form, gap pbe, bulk modulus, shear modulus
+# JARVIS dataset entries: formation_energy_peratom, optb88vdw_bandgap, optb88vdw_total_energy, mbj_bandgap, ehull
+# Alloy FG OCD dataset entries: alloy_gmae, fg_gmae, ocd_gmae
+# Strain adsorption dataset: adsorption energy label, strain adsorption energy
+
+
+task: 'finetune'
+
+# Materials Project dataset entries: e_form, gap pbe
+train_size: 60000
+val_size: 5000
+test_size: 4239
+
+# Materials Project dataset entries: bulk modulus
+#train_size: 4664
+#val_size: 393
+#test_size: 393
+
+# Materials Project dataset entries: shear modulus
+#train_size: 4664
+#val_size: 392
+#test_size: 393
+
+# JARVIS dataset entries: formation_energy_peratom, optb88vdw_bandgap, optb88vdw_total_energy
+#train_size: 44578
+#val_size: 5572
+#test_size: 5572
+
+# JARVIS dataset entries: mbj_bandgap
+#train_size: 14537
+#val_size: 1817
+#test_size: 1817
+
+# JARVIS dataset entries: ehull
+#train_size: 44296
+#val_size: 5537
+#test_size: 5537
+
+# GMAE dataset: alloy_gmae, fg_gmae, ocd_gmae (lr=0.0006)
+#train_size: 0.8
+#val_size: 0.1
+#test_size: 0.1
+
+# Strain adsorption dataset: adsorption energy label, strain adsorption energy
+#train_size: 4704
+#val_size: 588
+#test_size: 588
+
+# max_len: 1280
+random_seed: 123
+idx_save_file: _ids_train_val_test_
+
+epochs: 500  # 500 700
+batch_size: 8 # 8 16 32
+num_workers: 0
+weight_decay: 0.0
+learning_rate: 0.0005 # 0.0005 0.0006
+warmup_steps: 10
+
+device: cuda:0
+normalize: True  # scaling the targets by their mean and std
+
+pretrained_model_pt: pretraining_checkpoint_best.pt
+load_pretrained_model_path: /home/zl/DGM/ckpt/pretraining
+resume_ckpt_path: /home/zl/DGM/ckpt/finetuned
+ckpt_save_path: /home/zl/DGM/ckpt/finetuned
+
+
+#NTXentloss:
+#  temperature: 1.0                      # temperature of NT-Xent loss
+#  use_cosine_similarity: True           # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
+
+model:
+  # potentials: [-0.801, -0.074, 0.145]
+
+  conv_layers: 3 # 3
+  rbf_min: -4.0
+  rbf_max: 4.0
+  atom_input_features: 92
+  inf_edge_features: 64
+  fc_features: 256
+  graph_embed_dim: 256
+
+  euclidean: False
+  transformer: True
+  projection_dim: 256
+  ns: 64
+  nv: 8
+  eno3: True
+
+  num_heads: 1
+  num_experts: 2
+  hidden_dim: 128
+  # top_k: 3
+  # noise_scale: 0.01
+  # logit_out_dim: 4
+
+  temperature: 0.1
+  lambda_: [1, 0.5, 0.5]
+  use_cosine_similarity: True   # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
+  dropout: 0.1 # 0.0 0.1
+  output_dim: 1  # 1

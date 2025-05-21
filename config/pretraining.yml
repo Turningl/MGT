@@ -1,0 +1,81 @@
+root: /home/zl/DGM/dataset/pretrained/processed
+name: pretraining.pt
+
+target:
+
+task: 'pretraining'
+
+train_size: 0.8
+val_size: 0.1
+test_size: 0.1
+
+# max_len: 1280
+
+idx_save_file: pretraining_ids_train_val_test.pt
+process_dir: processed  # directory for torch geometric processed dataset
+cache_dir: cache  # directory for infinite summation processed files
+checkpoint_dir: checkpoint  # directory for checkpoints
+
+# atom_features: atomic_number
+# use_canonize: True
+# use_lattice: True
+# use_angle: True
+# transform:
+# pre_transform:
+# pre_filter:
+
+epochs: 200  # 100 200
+batch_size: 128
+num_workers: 0
+weight_decay: 0.0
+random_seed: 123
+learning_rate: 1.0e-5
+warmup_steps: 10
+
+resume_ckpt_path:
+load_pretrained_model_path: /home/zl/DGM/ckpt/pretraining
+ckpt_save_path: /home/zl/DGM/ckpt/pretraining
+result_save_path: /home/zl/DGM/results/pretraining
+
+device: cuda:3
+pin_memory: False
+write_checkpoint: True
+write_predictions: True
+store_outputs: True
+progress: True
+log_tensorboard: False
+
+normalize: False  # scaling the targets by their mean and std
+euclidean: False  # disable infinite summation or not
+
+#NTXentloss:
+#  temperature: 0.1                      # temperature of NT-Xent loss
+#  use_cosine_similarity: True           # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
+
+model:
+  # potentials: [-0.801, -0.074, 0.145]
+
+  temperature: 1.0
+  use_cosine_similarity: True           # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
+  lambda_: [1, 0.5, 0.5]
+  projection_dim: 256
+  position_dim: 3
+
+  conv_layers: 3 # 3 2
+  rbf_min: -4.0
+  rbf_max: 4.0
+
+  atom_input_features: 92
+  inf_edge_features: 64
+  fc_features: 256
+  graph_embed_dim: 256
+
+  num_heads: 1
+  euclidean: False
+  transformer: True
+  ns: 64
+  nv: 8
+  eno3: True
+
+  dropout: 0.1 # 0.0 0.1
+  # output_dim: 1  # 1
