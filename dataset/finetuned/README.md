@@ -1,4 +1,4 @@
-### Fine-tuning and transfer leearning Dataset s
+### Fine-tuning and transfer learning Datasets
 
 For Formation Energy, Band Gap fine-tuning datasets, please run:
 
