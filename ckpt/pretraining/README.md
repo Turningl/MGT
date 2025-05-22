@@ -1,1 +1,1 @@
-If you want to use the ptraining model for resume training or downsteam tasks. You can find all DGMs in [here](https://doi.org/10.5281/zenodo.15473642).
+If you intend to utilize the pre-trained model for resume training or downstream tasks, you can find all the DGMs available [here](https://doi.org/10.5281/zenodo.15473642).
