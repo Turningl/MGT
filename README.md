@@ -14,7 +14,7 @@ conda activate DGM
 
 ## Dataset 
 
-We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper[here](https://doi.org/10.5281/zenodo.15473642).
+We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper [here](https://doi.org/10.5281/zenodo.15473642).
 
 Once you have successfully downloaded the datasets, please follow these steps for organization:
 
