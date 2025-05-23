@@ -5,6 +5,7 @@ target: e_form
 # Materials Project dataset entries: e_form, gap pbe, bulk modulus, shear modulus
 # JARVIS dataset entries: formation_energy_peratom, optb88vdw_bandgap, optb88vdw_total_energy, mbj_bandgap, ehull
 # Alloy FG OCD dataset entries: alloy_gmae, fg_gmae, ocd_gmae
+# HOIP dataset entry: Bandgap
 # Strain adsorption dataset: adsorption energy label, strain adsorption energy
 
 
@@ -44,6 +45,11 @@ test_size: 4239
 #train_size: 0.8
 #val_size: 0.1
 #test_size: 0.1
+
+# HOIP dataset: Bandgap
+# train_size: 0.8
+# val_size: 0.1
+# test_size: 0.1
 
 # Strain adsorption dataset: adsorption energy label, strain adsorption energy
 #train_size: 4704
