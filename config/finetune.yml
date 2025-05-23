@@ -108,5 +108,5 @@ model:
   temperature: 0.1
   lambda_: [1, 0.5, 0.5]
   use_cosine_similarity: True   # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
-  dropout: 0.1 # 0.0 0.1
+  dropout: 0.0 # 0.0 0.1
   output_dim: 1  # 1
