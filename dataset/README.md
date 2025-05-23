@@ -6,7 +6,7 @@ Once you have successfully downloaded the datasets, please follow these steps fo
 
 #### Pretraining Datasets: 
 
-Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pre-training debug dataset to assist you in debugging your code.
+Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pretraining debug dataset to assist you in debugging your code.
 
 #### Fine-tuning and Transfer Learning Datasets:
 
