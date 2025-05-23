@@ -77,5 +77,5 @@ model:
   nv: 8
   eno3: True
 
-  dropout: 0.1 # 0.0 0.1
+  dropout: 0.0 # 0.0 0.1
   # output_dim: 1  # 1
