@@ -28,7 +28,7 @@ Extract the fine-tuning and transfer learning datasets and unzip them under the 
 
 #### Process dataset:
 
-If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
+If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./bin/README.md` file.
 
 ## Pretrained models
 
