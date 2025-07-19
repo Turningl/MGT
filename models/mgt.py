@@ -16,7 +16,7 @@ from models.moe.experts import MixOfExperts
 class MGTransformer(nn.Module):
 
     """
-    Multi-view Graph Transformer (MGT)
+    Multi-view graph transformer (MGT)
 
     This model combines SE(3) and SO(3) graph encoders with projection heads and a mixture of experts model.
     It supports two processes: pretraining (contrastive learning and position prediction) and finetuning (downstream tasks).
