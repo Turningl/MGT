@@ -1,4 +1,4 @@
-name: DGM
+name: MGT
 channels:
   - pytorch
   - nvidia
