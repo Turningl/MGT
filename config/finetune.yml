@@ -1,4 +1,4 @@
-root: /home/zl/DGM/dataset/finetune/processed
+root: /home/zl/MGT/dataset/finetune/processed
 name: megnet_processed.pt
 
 target: e_form
@@ -46,11 +46,6 @@ test_size: 4239
 #val_size: 0.1
 #test_size: 0.1
 
-# HOIP dataset: Bandgap
-# train_size: 0.8
-# val_size: 0.1
-# test_size: 0.1
-
 # Strain adsorption dataset: adsorption energy label, strain adsorption energy
 #train_size: 4704
 #val_size: 588
@@ -71,9 +66,9 @@ device: cuda:0
 normalize: True  # scaling the targets by their mean and std
 
 pretrained_model_pt: pretraining_checkpoint_best.pt
-load_pretrained_model_path: /home/zl/DGM/ckpt/pretraining
-resume_ckpt_path: /home/zl/DGM/ckpt/finetuned
-ckpt_save_path: /home/zl/DGM/ckpt/finetuned
+load_pretrained_model_path: /home/zl/MGT/ckpt/pretraining
+resume_ckpt_path: /home/zl/MGT/ckpt/finetuned
+ckpt_save_path: /home/zl/MGT/ckpt/finetuned
 
 
 #NTXentloss:
