@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 from utils.dataset import CrystalDataset, CrystalDataLoader
-from models.dgm import DGModel
+from models.mgt import MGTransformer
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -126,7 +126,7 @@ if __name__ == '__main__':
     # os.environ["CUDA_VISIBLE_DEVICES"] = '1'
     # os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
-    config = yaml.load(open("/home/zl/DGM/config/pretraining.yml", "r"), Loader=yaml.FullLoader)
+    config = yaml.load(open("/home/zl/MGT/config/pretraining.yml", "r"), Loader=yaml.FullLoader)
     print(config)
 
     datawrapper = CrystalDataLoader(
@@ -156,7 +156,7 @@ if __name__ == '__main__':
     #     model = nn.DataParallel(model, device_ids=config['device'])
     # model.cuda()
 
-    model = DGModel(config=config,
+    model = MGTransformer(config=config,
                      config_model=config['model']
                      ).to(config['device'])
 
