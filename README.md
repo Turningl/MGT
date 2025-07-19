@@ -8,7 +8,7 @@ Set up conda environment
 
 ```
 conda env create -f environment.yml
-conda activate DGM
+conda activate MGT
 ```
 
 ## Dataset 
