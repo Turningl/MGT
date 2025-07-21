@@ -1,5 +1,7 @@
 ### Fine-tuning and transfer learning Datasets
 
+We have prepared the relevant scripts in [here](https://doi.org/10.5281/zenodo.15473642).
+
 For Formation Energy, Band Gap fine-tuning datasets, please run:
 
 ```
