@@ -13,24 +13,6 @@ conda env create -f environment.yml
 conda activate MGT
 ```
 
-## Dataset 
-
-We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper[here](https://doi.org/10.5281/zenodo.15473642).
-
-Once you have successfully downloaded the datasets, please follow these steps for organization:
-
-#### Pretraining Datasets: 
-
-Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pre-training debug dataset to assist you in debugging your code.
-
-#### Fine-tuning and Transfer Learning Datasets:
-
-Extract the fine-tuning and transfer learning datasets and unzip them under the `./dataset/fine-tuning` folder.
-
-#### Process dataset:
-
-If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
-
 ## Pre-trained models
 
 The pre-trained MGT for pretraining can be found in `ckpt/pretraining` folder. 
@@ -61,6 +43,60 @@ A tutorial notebook for interferce process is available in `tutorial.ipynb`.
 jupyter notebook tutorial.ipynb
 ```
 
+## Dataset 
+
+We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper[here](https://doi.org/10.5281/zenodo.15473642).
+
+Once you have successfully downloaded the datasets, please follow these steps for organization:
+
+#### Pretraining Datasets: 
+
+Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pre-training debug dataset to assist you in debugging your code.
+
+#### Fine-tuning and Transfer Learning Datasets:
+
+Extract the fine-tuning and transfer learning datasets and unzip them under the `./dataset/fine-tuning` folder.
+
+#### Process dataset:
+
+If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
+
+For OQMD pretraining dataset, please download the processed CIF files from [train](https://zenodo.org/records/10642388/files/cifs_v1_train.pkl.gz),  [val](https://zenodo.org/records/10642388/files/cifs_v1_val.pkl.gz),  [test](https://zenodo.org/records/10642388/files/cifs_v1_tset.pkl.gz). 
+
+```
+python bin/cif2dataset_OQMD_pretrained.py
+```
+
+For GMAE pretraining dataset, please download the package from [here](https://zenodo.org/records/12104162).
+
+```
+python bin/cif2dataset_GMAE_pretrained.py
+```
+
+For Formation Energy, Band Gap fine-tuning datasets, please run:
+
+```
+python bin/cif2dataset_finetune_megnet.py
+```
+
+For Bulk Moduli and Shear Moduli fine-tuning datasets, please download the package from [here](https://figshare.com/projects/Bulk_and_shear_datasets/165430).
+
+```
+python bin/cif2dataset_bulk_moduli.py
+python bin/cif2dataset_shear_moduli.py
+```
+
+For Formation Energy, Bandgap (OPT), Total Energy, Bandgap (MBJ) and Ehull fine-tuning datasets, please run:
+
+```
+python bin/cif2dataset_finetune_dft_3d.py
+```
+
+For Alloy-GMAE, FG-GMAE and OCD-GMAE fine-tuning datasets, please download the package from [here](https://zenodo.org/records/12104162).
+
+```
+python bin/cif2dataset_GMAE.py
+```
 
 ## License
 
