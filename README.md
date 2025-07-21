@@ -61,42 +61,6 @@ Extract the fine-tuning and transfer learning datasets and unzip them under the 
 
 If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
 
-For OQMD pretraining dataset, please download the processed CIF files from [train](https://zenodo.org/records/10642388/files/cifs_v1_train.pkl.gz),  [val](https://zenodo.org/records/10642388/files/cifs_v1_val.pkl.gz),  [test](https://zenodo.org/records/10642388/files/cifs_v1_tset.pkl.gz). 
-
-```
-python bin/cif2dataset_OQMD_pretrained.py
-```
-
-For GMAE pretraining dataset, please download the package from [here](https://zenodo.org/records/12104162).
-
-```
-python bin/cif2dataset_GMAE_pretrained.py
-```
-
-For Formation Energy, Band Gap fine-tuning datasets, please run:
-
-```
-python bin/cif2dataset_finetune_megnet.py
-```
-
-For Bulk Moduli and Shear Moduli fine-tuning datasets, please download the package from [here](https://figshare.com/projects/Bulk_and_shear_datasets/165430).
-
-```
-python bin/cif2dataset_bulk_moduli.py
-python bin/cif2dataset_shear_moduli.py
-```
-
-For Formation Energy, Bandgap (OPT), Total Energy, Bandgap (MBJ) and Ehull fine-tuning datasets, please run:
-
-```
-python bin/cif2dataset_finetune_dft_3d.py
-```
-
-For Alloy-GMAE, FG-GMAE and OCD-GMAE fine-tuning datasets, please download the package from [here](https://zenodo.org/records/12104162).
-
-```
-python bin/cif2dataset_GMAE.py
-```
 
 ## License
 
