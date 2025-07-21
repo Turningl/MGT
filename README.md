@@ -1,4 +1,4 @@
-# Improving crystal material property prediction through multi-view graph transformer framework
+# Universal crystal material property prediction via multi-view geometric fusion in graph transformers
 
 ![Fig.1.png](assert%2FFig.1.png)
 
