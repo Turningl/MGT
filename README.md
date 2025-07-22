@@ -13,6 +13,24 @@ conda env create -f environment.yml
 conda activate MGT
 ```
 
+## Dataset 
+
+We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in [here](https://doi.org/10.5281/zenodo.15473642).
+
+Once you have successfully downloaded the datasets, please follow these steps for organization:
+
+#### Pretraining Datasets: 
+
+Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pre-training debug dataset to assist you in debugging your code.
+
+#### Fine-tuning and Transfer Learning Datasets:
+
+Extract the fine-tuning and transfer learning datasets and unzip them under the `./dataset/fine-tuning` folder.
+
+#### Process dataset:
+
+If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
+
 ## Pre-trained models
 
 The pre-trained MGT for pretraining can be found in `ckpt/pretraining` folder. 
@@ -42,25 +60,6 @@ A tutorial notebook for interferce process is available in `tutorial.ipynb`.
 ```
 jupyter notebook tutorial.ipynb
 ```
-
-## Dataset 
-
-We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in [here](https://doi.org/10.5281/zenodo.15473642).
-
-Once you have successfully downloaded the datasets, please follow these steps for organization:
-
-#### Pretraining Datasets: 
-
-Extract the pre-training dataset and unzip it under the `./dataset/pretrained` folder. Additionally, we have provided a pre-training debug dataset to assist you in debugging your code.
-
-#### Fine-tuning and Transfer Learning Datasets:
-
-Extract the fine-tuning and transfer learning datasets and unzip them under the `./dataset/fine-tuning` folder.
-
-#### Process dataset:
-
-If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
-
 
 ## License
 
