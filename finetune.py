@@ -3,7 +3,7 @@
 # @File : finetune.py
 
 
-import os, yaml
+import os, yaml, sys
 import pandas as pd
 import torch
 import numpy as np
@@ -144,9 +144,10 @@ if __name__ == '__main__':
     # os.environ["CUDA_VISIBLE_DEVICES"] = '2'
     # os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
-    config = yaml.load(open("/home/zl/MGT/config/finetune.yml", "r"), Loader=yaml.FullLoader)
+    with open(sys.argv[1], "r") as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
     print(config)
-
+    
     datawrapper = CrystalDataLoader(
         root = config['root'],
         name =config['name'],
