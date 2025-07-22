@@ -328,4 +328,4 @@ dependencies:
       - xmltodict==0.14.2
       - yarl==1.18.3
       - zipp==3.21.0
-prefix: /home/zl/miniconda3/envs/DGM
+prefix: /home/zl/miniconda3/envs/MGT
