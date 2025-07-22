@@ -24,7 +24,7 @@ All downstream tasks of MGT for `tutorial.ipynb` can be found in `ckpt/finetuned
 To train the MGT framework, where the configurations and detailed explaination for each variable can be found in `config/pretraining.yml` folder.
 
 ```
-python pretraining.py
+python pretraining.py  config/pretraining.yml
 ```
 
 ## Fine-tuning 
@@ -32,7 +32,7 @@ python pretraining.py
 To fine-tune the pre-trained model on downstream prediction tasks, where the configurations and detailed explaination for each variable can be found in `config/finetune.yml`
 
 ```
-python finetune.py
+python finetune.py config/finetune.yml
 ```
 
 ## Interferce
